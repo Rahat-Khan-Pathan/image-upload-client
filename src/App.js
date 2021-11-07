@@ -26,7 +26,7 @@ function App() {
         .then((url) => {
           // Got URL and uploaded to firebase storage
           // Send it to mongoDB
-          fetch("http://localhost:5000/upload", {
+          fetch("https://frozen-depths-11707.herokuapp.com/upload", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -58,7 +58,7 @@ function App() {
   // Get all the images link
   const [imagesData, setImagesData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/images")
+    fetch("https://frozen-depths-11707.herokuapp.com/images")
       .then((res) => res.json())
       .then((data) => setImagesData(data));
   }, [reload]);
